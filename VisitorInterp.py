@@ -4,6 +4,8 @@ from grammar.TrainerParser import TrainerParser
 from grammar.TrainerVisitor import TrainerVisitor
 
 class VisitorInterp(TrainerVisitor):
+    # TODO: try and do variable assignment plus calculation
+    # TODO: try and do variable calculation assignment
     def visitProgram(self, ctx: TrainerParser.ProgramContext):
         for i in range(0, ctx.getChildCount()):
             self.visit(ctx.getChild(i))
