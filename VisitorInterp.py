@@ -13,6 +13,7 @@ class VisitorInterp(TrainerVisitor):
         startToken : Token = ctx.start
         terminalNode : TerminalNode = ctx.ID()
         # print(terminalNode.__str__())
+        # TODO: find a way to remove the "" from the text
         if (ctx.ID().__str__() == "say"):
             print(ctx.toStringTree())
         else:
