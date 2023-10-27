@@ -11,11 +11,8 @@ class VisitorInterp(TrainerVisitor):
     
     def visitFunc(self, ctx: TrainerParser.FuncContext):
         startToken : Token = ctx.start
-        terminalNode : TerminalNode = ctx.ID()
-        # print(terminalNode.__str__())
-        # TODO: find a way to remove the "" from the text
         if (ctx.ID().__str__() == "say"):
-            print(ctx.toStringTree())
+            print(ctx.STRING().__str__())
         else:
             print(f"Line {startToken.line} can't recognize Function {ctx.ID()}.")
         return super().visitFunc(ctx)
