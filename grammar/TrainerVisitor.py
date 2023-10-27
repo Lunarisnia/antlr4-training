@@ -19,5 +19,20 @@ class TrainerVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by TrainerParser#atom.
+    def visitAtom(self, ctx:TrainerParser.AtomContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by TrainerParser#expr.
+    def visitExpr(self, ctx:TrainerParser.ExprContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by TrainerParser#var.
+    def visitVar(self, ctx:TrainerParser.VarContext):
+        return self.visitChildren(ctx)
+
+
 
 del TrainerParser

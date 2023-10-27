@@ -26,5 +26,32 @@ class TrainerListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by TrainerParser#atom.
+    def enterAtom(self, ctx:TrainerParser.AtomContext):
+        pass
+
+    # Exit a parse tree produced by TrainerParser#atom.
+    def exitAtom(self, ctx:TrainerParser.AtomContext):
+        pass
+
+
+    # Enter a parse tree produced by TrainerParser#expr.
+    def enterExpr(self, ctx:TrainerParser.ExprContext):
+        pass
+
+    # Exit a parse tree produced by TrainerParser#expr.
+    def exitExpr(self, ctx:TrainerParser.ExprContext):
+        pass
+
+
+    # Enter a parse tree produced by TrainerParser#var.
+    def enterVar(self, ctx:TrainerParser.VarContext):
+        pass
+
+    # Exit a parse tree produced by TrainerParser#var.
+    def exitVar(self, ctx:TrainerParser.VarContext):
+        pass
+
+
 
 del TrainerParser
