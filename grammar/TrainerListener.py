@@ -1,4 +1,4 @@
-# Generated from ./Trainer.g4 by ANTLR 4.13.1
+# Generated from ./grammar/Trainer.g4 by ANTLR 4.13.1
 from antlr4 import *
 if "." in __name__:
     from .TrainerParser import TrainerParser
@@ -32,6 +32,15 @@ class TrainerListener(ParseTreeListener):
 
     # Exit a parse tree produced by TrainerParser#atom.
     def exitAtom(self, ctx:TrainerParser.AtomContext):
+        pass
+
+
+    # Enter a parse tree produced by TrainerParser#calculation.
+    def enterCalculation(self, ctx:TrainerParser.CalculationContext):
+        pass
+
+    # Exit a parse tree produced by TrainerParser#calculation.
+    def exitCalculation(self, ctx:TrainerParser.CalculationContext):
         pass
 
 

@@ -7,6 +7,7 @@ say<"HelloWorld!">
 name = "Louna"
 x = 1
 y = 2
+z = x
 
 add = 100 + 1
 subtract = 100 - 1

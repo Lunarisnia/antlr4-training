@@ -1,4 +1,4 @@
-# Generated from ./Trainer.g4 by ANTLR 4.13.1
+# Generated from ./grammar/Trainer.g4 by ANTLR 4.13.1
 from antlr4 import *
 if "." in __name__:
     from .TrainerParser import TrainerParser
@@ -21,6 +21,11 @@ class TrainerVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by TrainerParser#atom.
     def visitAtom(self, ctx:TrainerParser.AtomContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by TrainerParser#calculation.
+    def visitCalculation(self, ctx:TrainerParser.CalculationContext):
         return self.visitChildren(ctx)
 
 

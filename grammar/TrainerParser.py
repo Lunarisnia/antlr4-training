@@ -1,4 +1,4 @@
-# Generated from ./Trainer.g4 by ANTLR 4.13.1
+# Generated from ./grammar/Trainer.g4 by ANTLR 4.13.1
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
@@ -10,18 +10,21 @@ else:
 
 def serializedATN():
     return [
-        4,1,13,40,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,1,0,1,0,5,0,13,
-        8,0,10,0,12,0,16,9,0,1,0,1,0,1,1,1,1,1,1,1,1,1,1,1,2,1,2,1,3,1,3,
-        1,3,1,3,1,3,1,3,1,3,3,3,34,8,3,1,4,1,4,1,4,1,4,1,4,0,0,5,0,2,4,6,
-        8,0,2,2,0,5,7,12,12,1,0,8,11,38,0,14,1,0,0,0,2,19,1,0,0,0,4,24,1,
-        0,0,0,6,33,1,0,0,0,8,35,1,0,0,0,10,13,3,2,1,0,11,13,3,8,4,0,12,10,
-        1,0,0,0,12,11,1,0,0,0,13,16,1,0,0,0,14,12,1,0,0,0,14,15,1,0,0,0,
-        15,17,1,0,0,0,16,14,1,0,0,0,17,18,5,0,0,1,18,1,1,0,0,0,19,20,5,13,
-        0,0,20,21,5,1,0,0,21,22,5,5,0,0,22,23,5,2,0,0,23,3,1,0,0,0,24,25,
-        7,0,0,0,25,5,1,0,0,0,26,34,3,4,2,0,27,28,5,12,0,0,28,29,7,1,0,0,
-        29,34,5,12,0,0,30,31,5,13,0,0,31,32,7,1,0,0,32,34,5,13,0,0,33,26,
-        1,0,0,0,33,27,1,0,0,0,33,30,1,0,0,0,34,7,1,0,0,0,35,36,5,13,0,0,
-        36,37,5,3,0,0,37,38,3,6,3,0,38,9,1,0,0,0,3,12,14,33
+        4,1,13,47,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,1,0,1,
+        0,5,0,15,8,0,10,0,12,0,18,9,0,1,0,1,0,1,1,1,1,1,1,1,1,1,1,1,2,1,
+        2,1,3,1,3,1,3,1,3,1,3,1,3,3,3,35,8,3,1,4,1,4,3,4,39,8,4,1,5,1,5,
+        1,5,1,5,3,5,45,8,5,1,5,0,0,6,0,2,4,6,8,10,0,2,2,0,5,7,12,12,1,0,
+        8,11,45,0,16,1,0,0,0,2,21,1,0,0,0,4,26,1,0,0,0,6,34,1,0,0,0,8,38,
+        1,0,0,0,10,40,1,0,0,0,12,15,3,2,1,0,13,15,3,10,5,0,14,12,1,0,0,0,
+        14,13,1,0,0,0,15,18,1,0,0,0,16,14,1,0,0,0,16,17,1,0,0,0,17,19,1,
+        0,0,0,18,16,1,0,0,0,19,20,5,0,0,1,20,1,1,0,0,0,21,22,5,13,0,0,22,
+        23,5,1,0,0,23,24,5,5,0,0,24,25,5,2,0,0,25,3,1,0,0,0,26,27,7,0,0,
+        0,27,5,1,0,0,0,28,29,5,12,0,0,29,30,7,1,0,0,30,35,5,12,0,0,31,32,
+        5,13,0,0,32,33,7,1,0,0,33,35,5,13,0,0,34,28,1,0,0,0,34,31,1,0,0,
+        0,35,7,1,0,0,0,36,39,3,4,2,0,37,39,3,6,3,0,38,36,1,0,0,0,38,37,1,
+        0,0,0,39,9,1,0,0,0,40,41,5,13,0,0,41,44,5,3,0,0,42,45,3,8,4,0,43,
+        45,5,13,0,0,44,42,1,0,0,0,44,43,1,0,0,0,45,11,1,0,0,0,5,14,16,34,
+        38,44
     ]
 
 class TrainerParser ( Parser ):
@@ -44,10 +47,11 @@ class TrainerParser ( Parser ):
     RULE_program = 0
     RULE_func = 1
     RULE_atom = 2
-    RULE_expr = 3
-    RULE_var = 4
+    RULE_calculation = 3
+    RULE_expr = 4
+    RULE_var = 5
 
-    ruleNames =  [ "program", "func", "atom", "expr", "var" ]
+    ruleNames =  [ "program", "func", "atom", "calculation", "expr", "var" ]
 
     EOF = Token.EOF
     T__0=1
@@ -124,29 +128,29 @@ class TrainerParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 14
+            self.state = 16
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==13:
-                self.state = 12
+                self.state = 14
                 self._errHandler.sync(self)
                 la_ = self._interp.adaptivePredict(self._input,0,self._ctx)
                 if la_ == 1:
-                    self.state = 10
+                    self.state = 12
                     self.func()
                     pass
 
                 elif la_ == 2:
-                    self.state = 11
+                    self.state = 13
                     self.var()
                     pass
 
 
-                self.state = 16
+                self.state = 18
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
-            self.state = 17
+            self.state = 19
             self.match(TrainerParser.EOF)
         except RecognitionException as re:
             localctx.exception = re
@@ -196,13 +200,13 @@ class TrainerParser ( Parser ):
         self.enterRule(localctx, 2, self.RULE_func)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 19
-            self.match(TrainerParser.ID)
-            self.state = 20
-            self.match(TrainerParser.T__0)
             self.state = 21
-            self.match(TrainerParser.STRING)
+            self.match(TrainerParser.ID)
             self.state = 22
+            self.match(TrainerParser.T__0)
+            self.state = 23
+            self.match(TrainerParser.STRING)
+            self.state = 24
             self.match(TrainerParser.T__1)
         except RecognitionException as re:
             localctx.exception = re
@@ -259,7 +263,7 @@ class TrainerParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 24
+            self.state = 26
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 4320) != 0)):
                 self._errHandler.recoverInline(self)
@@ -275,16 +279,12 @@ class TrainerParser ( Parser ):
         return localctx
 
 
-    class ExprContext(ParserRuleContext):
+    class CalculationContext(ParserRuleContext):
         __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-
-        def atom(self):
-            return self.getTypedRuleContext(TrainerParser.AtomContext,0)
-
 
         def INT(self, i:int=None):
             if i is None:
@@ -311,6 +311,90 @@ class TrainerParser ( Parser ):
                 return self.getToken(TrainerParser.ID, i)
 
         def getRuleIndex(self):
+            return TrainerParser.RULE_calculation
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCalculation" ):
+                listener.enterCalculation(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCalculation" ):
+                listener.exitCalculation(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCalculation" ):
+                return visitor.visitCalculation(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def calculation(self):
+
+        localctx = TrainerParser.CalculationContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 6, self.RULE_calculation)
+        self._la = 0 # Token type
+        try:
+            self.state = 34
+            self._errHandler.sync(self)
+            token = self._input.LA(1)
+            if token in [12]:
+                self.enterOuterAlt(localctx, 1)
+                self.state = 28
+                self.match(TrainerParser.INT)
+                self.state = 29
+                _la = self._input.LA(1)
+                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 3840) != 0)):
+                    self._errHandler.recoverInline(self)
+                else:
+                    self._errHandler.reportMatch(self)
+                    self.consume()
+                self.state = 30
+                self.match(TrainerParser.INT)
+                pass
+            elif token in [13]:
+                self.enterOuterAlt(localctx, 2)
+                self.state = 31
+                self.match(TrainerParser.ID)
+                self.state = 32
+                _la = self._input.LA(1)
+                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 3840) != 0)):
+                    self._errHandler.recoverInline(self)
+                else:
+                    self._errHandler.reportMatch(self)
+                    self.consume()
+                self.state = 33
+                self.match(TrainerParser.ID)
+                pass
+            else:
+                raise NoViableAltException(self)
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class ExprContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def atom(self):
+            return self.getTypedRuleContext(TrainerParser.AtomContext,0)
+
+
+        def calculation(self):
+            return self.getTypedRuleContext(TrainerParser.CalculationContext,0)
+
+
+        def getRuleIndex(self):
             return TrainerParser.RULE_expr
 
         def enterRule(self, listener:ParseTreeListener):
@@ -333,46 +417,21 @@ class TrainerParser ( Parser ):
     def expr(self):
 
         localctx = TrainerParser.ExprContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 6, self.RULE_expr)
-        self._la = 0 # Token type
+        self.enterRule(localctx, 8, self.RULE_expr)
         try:
-            self.state = 33
+            self.state = 38
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,2,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,3,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 26
+                self.state = 36
                 self.atom()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 27
-                self.match(TrainerParser.INT)
-                self.state = 28
-                _la = self._input.LA(1)
-                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 3840) != 0)):
-                    self._errHandler.recoverInline(self)
-                else:
-                    self._errHandler.reportMatch(self)
-                    self.consume()
-                self.state = 29
-                self.match(TrainerParser.INT)
-                pass
-
-            elif la_ == 3:
-                self.enterOuterAlt(localctx, 3)
-                self.state = 30
-                self.match(TrainerParser.ID)
-                self.state = 31
-                _la = self._input.LA(1)
-                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 3840) != 0)):
-                    self._errHandler.recoverInline(self)
-                else:
-                    self._errHandler.reportMatch(self)
-                    self.consume()
-                self.state = 32
-                self.match(TrainerParser.ID)
+                self.state = 37
+                self.calculation()
                 pass
 
 
@@ -392,8 +451,11 @@ class TrainerParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def ID(self):
-            return self.getToken(TrainerParser.ID, 0)
+        def ID(self, i:int=None):
+            if i is None:
+                return self.getTokens(TrainerParser.ID)
+            else:
+                return self.getToken(TrainerParser.ID, i)
 
         def expr(self):
             return self.getTypedRuleContext(TrainerParser.ExprContext,0)
@@ -422,15 +484,27 @@ class TrainerParser ( Parser ):
     def var(self):
 
         localctx = TrainerParser.VarContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 8, self.RULE_var)
+        self.enterRule(localctx, 10, self.RULE_var)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 35
+            self.state = 40
             self.match(TrainerParser.ID)
-            self.state = 36
+            self.state = 41
             self.match(TrainerParser.T__2)
-            self.state = 37
-            self.expr()
+            self.state = 44
+            self._errHandler.sync(self)
+            la_ = self._interp.adaptivePredict(self._input,4,self._ctx)
+            if la_ == 1:
+                self.state = 42
+                self.expr()
+                pass
+
+            elif la_ == 2:
+                self.state = 43
+                self.match(TrainerParser.ID)
+                pass
+
+
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
